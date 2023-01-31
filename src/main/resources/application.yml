@@ -1,0 +1,14 @@
+
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: summit
+      password: pass0526!
+      database: summitChat
+
+mongodb:
+  connectionString: mongodb://localhost:27017/summitChat
