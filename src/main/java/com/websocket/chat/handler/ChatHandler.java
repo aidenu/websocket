@@ -26,7 +26,6 @@ public class ChatHandler extends TextWebSocketHandler {
         String payload = message.getPayload();
         log.info("[{}] message : {}", session.getId(), payload);
         chatService.saveData(payload);
-
         list.stream().forEach(sess -> extractSendMessage(sess, message));
     }
 
@@ -34,7 +33,8 @@ public class ChatHandler extends TextWebSocketHandler {
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         list.add(session);
-        log.info("recent Chat history :: {}", chatService.getChatList());
+//        log.info("recent Chat history :: {}", chatService.getChatList());
+        log.info("today Chat history :: {}", chatService.getTodayChatList());
         log.info("Connect Session [{}]", session.getId());
     }
 
